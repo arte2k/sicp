@@ -1,0 +1,5 @@
+(define (for-each f items)
+	(define (iter x)
+		(cond ((null? x) #t)
+		(else (f (car x)) (iter (cdr x)))))
+	(iter items))

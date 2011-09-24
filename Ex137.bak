@@ -1,0 +1,11 @@
+(define (inc i) (+ i 1))
+
+(define (cont-frac n d k)(
+	(define (count i) (
+		(if (= i k) 
+		(/ (n i) (d i) )
+		(/ (n i) (+ (d i) (count (inc i) ))))))
+	(count 1)))
+
+(define (test k)
+(cont-frac (lambda (i) 1.0) (lambda (i) 1.0) k))

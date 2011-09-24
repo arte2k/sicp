@@ -1,0 +1,7 @@
+(define (PascalTriangle row column)
+	(cond ((> column row) 0)
+			((= column row) 1)
+			((= row 1) 1)
+			((= column 1) 1)
+			(else (+ (PascalTriangle (- row 1) (- column 1)) 
+						(PascalTriangle (- row 1) column))) ))
